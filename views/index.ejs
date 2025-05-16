@@ -1,0 +1,24 @@
+<%- include('layout') %>
+
+<h1>Welcome to Our Store</h1>
+<ul>
+  
+    <% products.forEach(product => { %>
+      <li>
+        <a href="/product/<%= product.id %>">
+          <img src="<%= product.image %>" alt="<%= product.name %>" width="150" />
+          <h3><%= product.name %></h3>
+          <p>₹<%= product.price %></p>
+        </a>
+  
+        <form action="/buy/<%= product.id %>" method="POST">
+          <button type="submit">Buy Now</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+  
+
+
+</body>
+</html>
